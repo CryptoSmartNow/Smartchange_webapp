@@ -41,13 +41,13 @@ const Shadow = () => {
   const user= authContext.user?.data
   console.log(user)
 
-const SOCKET_URL = process.env.SOCKET_URL ||'http://localhost:3001'
+
 
   useEffect(()=>{
     const socketInitializer = async ()=>{
       const startServer= await fetch('/api/socket')
       console.log(startServer.json())
-      const socket = io(`${SOCKET_URL}`);
+      const socket = io(`http://localhost:3001`);
   
       socket.on('connect', () => {
         console.log('Connected to server');
@@ -69,26 +69,25 @@ const SOCKET_URL = process.env.SOCKET_URL ||'http://localhost:3001'
 
   useEffect(()=>{
     if(sendMessage !== null){
-      const socket = io(`${SOCKET_URL}`);
+      const socket = io(`http://localhost:3001`);
       socket.emit("send-message",sendMessage)
     }
   }, [sendMessage])
   
   useEffect(()=>{
     
-      const socket = io(`${SOCKET_URL}`);
+      const socket = io(`$ http://localhost:3001`);
       socket.on("receive-message", (data)=>{
         setReceivedMessage(data)
       })
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  
-  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL  
+ 
   console.log(BASE_URL)
   useEffect(()=>{
     const getChats = async ()=>{
       try{
-        const response= await fetch(`${BASE_URL}?action=userChats&userId=${user._id}`)
+        const response= await fetch(`http://localhost:3000?action=userChats&userId=${user._id}`)
         const data = await response.json();
         setChats(data)
         console.log(data);

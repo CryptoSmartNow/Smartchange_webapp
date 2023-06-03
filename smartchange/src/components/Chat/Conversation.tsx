@@ -15,10 +15,10 @@ const Conversation = ({data, currentUserId, online}) => {
     const userId = data.users.find((id)=>id !== currentUserId)
     console.log(userId)
 
-    const BASE_URL = process.env.BASE_URL  || 'http://localhost:3000'
+    
     const getUserData = async()=>{
       try{
-        const response= await fetch(`${BASE_URL}/api/getUser?action=getUser&userId=${userId}`)
+        const response= await fetch(`http://localhost:3000/api/getUser?action=getUser&userId=${userId}`)
         const data = await response.json(); 
         setUserData(data)
         console.log(data)
