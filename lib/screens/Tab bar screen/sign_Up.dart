@@ -8,12 +8,23 @@ import '../../widgets/login_footer.dart';
 class SignUp extends StatefulWidget {
   SignUp({super.key});
 
+
   @override
   State<SignUp> createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
   TextEditingController passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
