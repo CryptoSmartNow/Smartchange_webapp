@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_change/utilis/app_colors.dart';
 
 class LoginFooter extends StatefulWidget {
   const LoginFooter({super.key});
@@ -17,10 +18,10 @@ class _LoginFooterState extends State<LoginFooter> {
           height: 45,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(95),
-              color: Colors.orangeAccent,
+              color: AppColors.ClickableBottonColor,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.orangeAccent.withOpacity(0.2),
+                  color: AppColors.ClickableBottonColor.withOpacity(0.2),
                   spreadRadius: 10,
                   blurRadius: 5,
                 )
@@ -60,9 +61,9 @@ class _LoginFooterState extends State<LoginFooter> {
               width: 40,
               decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.grey.shade400,
+                    color: AppColors.FooterImageBorderColor,
                   ),
-                  color: Colors.grey.shade300,
+                  color: AppColors.FooterImageBgColor,
                   shape: BoxShape.circle,
                   image: const DecorationImage(
                       image: AssetImage('Images/goog.png'))),
@@ -75,9 +76,9 @@ class _LoginFooterState extends State<LoginFooter> {
               width: 40,
               decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.grey.shade400,
+                    color: AppColors.FooterImageBorderColor,
                   ),
-                  color: Colors.grey.shade300,
+                  color: AppColors.FooterImageBgColor,
                   shape: BoxShape.circle,
                   image: const DecorationImage(
                       image: AssetImage('Images/twit.png'))),

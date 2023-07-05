@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_change/utilis/app_colors.dart';
 import 'package:smart_change/widgets/password_form.dart';
 
 import '../../widgets/input_field.dart';
@@ -7,7 +8,6 @@ import '../../widgets/login_footer.dart';
 // ignore: must_be_immutable
 class SignUp extends StatefulWidget {
   SignUp({super.key});
-
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -31,28 +31,29 @@ class _SignUpState extends State<SignUp> {
     return Container(
       child: Column(
         children: <Widget>[
-          InputField(
+          const InputField(
             text: 'User Name',
             textSize: 15,
-            icon: Icons.person_2_rounded,
-            Iconcolor: Colors.grey.shade400,
+            icon: Icons.person_2_outlined,
+            Iconcolor: AppColors.IconColor,
           ),
           const SizedBox(
             height: 10,
           ),
-          InputField(
-              text: 'Email address',
-              textSize: 15,
-              icon: Icons.mail,
-              Iconcolor: Colors.grey.shade400),
+          const InputField(
+            text: 'Email address',
+            textSize: 15,
+            icon: Icons.mail,
+            Iconcolor: AppColors.IconColor,
+          ),
           const SizedBox(
             height: 10,
           ),
-          InputField(
+          const InputField(
               text: 'Phone | +234',
               textSize: 15,
               icon: Icons.call,
-              Iconcolor: Colors.grey.shade400),
+              Iconcolor: AppColors.IconColor),
           const SizedBox(
             height: 10,
           ),

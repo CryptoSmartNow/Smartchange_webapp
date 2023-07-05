@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:smart_change/utilis/app_colors.dart';
 import 'package:smart_change/widgets/header_image.dart';
 import 'package:smart_change/widgets/input_field.dart';
 
@@ -24,37 +25,37 @@ class _SignInState extends State<SignIn> {
   void dispose() {
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return const Expanded(
       child: Column(
         children: <Widget>[
           InputField(
             text: 'Email address',
             textSize: 15,
             icon: Icons.mail,
-            Iconcolor: Colors.grey.shade400,
+            Iconcolor: AppColors.IconColor,
           ),
-          const SizedBox(
+          SizedBox(
             height: 15,
           ),
           InputField(
               text: 'Password',
               textSize: 15,
               icon: Icons.mail_lock_outlined,
-              Iconcolor: Colors.grey.shade400),
-          const SizedBox(
+              Iconcolor:AppColors.IconColor),
+          SizedBox(
             height: 10,
           ),
-          const Text(
+          Text(
             'Forget Password?',
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
           ),
-          const SizedBox(
+          SizedBox(
             height: 20,
           ),
-          const LoginFooter()
+          LoginFooter()
         ],
       ),
     );

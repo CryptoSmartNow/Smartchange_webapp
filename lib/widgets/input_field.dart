@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_change/utilis/app_colors.dart';
 
 class InputField extends StatefulWidget {
   final String text;
@@ -30,12 +31,12 @@ class _InputFieldState extends State<InputField> {
           border: InputBorder.none,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 width: 2,
-                color: Colors.grey.shade400,
+                color: AppColors.FooterImageBorderColor,
               )),
           filled: true,
-          fillColor: Colors.grey[300],
+          fillColor: AppColors.fillColor,
           hintText: widget.text,
           hintStyle: TextStyle(
             fontSize: widget.textSize,

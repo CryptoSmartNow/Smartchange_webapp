@@ -12,13 +12,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     //print('Current height is ' + MediaQuery.of(context).size.height.toString());
-    return Container(
-      color: Colors.grey[100],
-      child: const Column(
-        children: [
-          LoginPage(),
-        ],
-      ),
-    );
+    return const LoginPage();
   }
 }

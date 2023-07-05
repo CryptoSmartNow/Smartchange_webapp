@@ -1,6 +1,7 @@
 // ignore_for_file: dead_code
 
 import 'package:flutter/material.dart';
+import 'package:smart_change/utilis/app_colors.dart';
 
 class PasswordTextField extends StatefulWidget {
   final String text;
@@ -25,13 +26,13 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             border: InputBorder.none,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   width: 2,
-                  color: Colors.grey.shade400,
+                  color: AppColors.FooterImageBorderColor,
                 )),
             hintText: widget.text,
             filled: true,
-            fillColor: Colors.grey[300],
+            fillColor: AppColors.FooterImageBgColor,
             suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -39,13 +40,13 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
                   });
                 },
                 child: obscureText
-                    ? Icon(
+                    ? const Icon(
                         Icons.visibility_off_outlined,
-                        color: Colors.grey[400],
+                        color: AppColors.IconColor,
                       )
-                    : Icon(
+                    : const Icon(
                         Icons.visibility_outlined,
-                        color: Colors.grey[500],
+                        color: AppColors.IconColor,
                       ))),
       ),
     );
