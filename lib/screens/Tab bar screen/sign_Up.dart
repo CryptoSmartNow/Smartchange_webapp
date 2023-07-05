@@ -19,11 +19,11 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: [
+        children: <Widget>[
           InputField(
             text: 'User Name',
             textSize: 15,
-            icon: Icons.image_outlined,
+            icon: Icons.person_2_rounded,
             Iconcolor: Colors.grey.shade400,
           ),
           const SizedBox(
@@ -32,7 +32,7 @@ class _SignUpState extends State<SignUp> {
           InputField(
               text: 'Email address',
               textSize: 15,
-              icon: Icons.mail_lock_outlined,
+              icon: Icons.mail,
               Iconcolor: Colors.grey.shade400),
           const SizedBox(
             height: 10,

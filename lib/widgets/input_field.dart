@@ -6,17 +6,14 @@ class InputField extends StatefulWidget {
   final IconData icon;
   final double iconSize;
   final Color Iconcolor;
-  const InputField(
-      {
-        
-        required this.text,
-      required this.textSize,
-      required this.icon,
-      this.iconSize = 18,
-      required this.Iconcolor,
-      super.key, });
-
-      
+  const InputField({
+    required this.text,
+    required this.textSize,
+    required this.icon,
+    this.iconSize = 18,
+    required this.Iconcolor,
+    super.key,
+  });
 
   @override
   State<InputField> createState() => _InputFieldState();

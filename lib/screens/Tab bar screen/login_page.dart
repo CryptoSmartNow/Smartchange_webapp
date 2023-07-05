@@ -28,48 +28,50 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-          width: 400,
-          height: 620,
-          color: Colors.grey[100],
-          child: Column(children: [
-            const CryptoSmartLogo(),
-            const SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: texts
-                    .map((e) => GestureDetector(
-                          onTap: active == texts.indexOf(e)
-                              ? null
-                              : () => setActive(active == 0 ? 1 : 0),
-                          child: Container(
-                            margin: EdgeInsets.symmetric(horizontal: 20),
-                            decoration: BoxDecoration(
-                              border: active == texts.indexOf(e)
-                                  ? const Border(
-                                      bottom: BorderSide(
-                                      width: 3,
-                                    ))
-                                  : null,
-                            ),
-                            child: Text(e),
-                          ),
-                        ))
-                    .toList(),
+    return SingleChildScrollView(
+      child: Material(
+        child: Container(
+            width: 400,
+            height: 620,
+            color: Colors.grey[100],
+            child: Column(children: [
+              const CryptoSmartLogo(),
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            active == 0 ? SignIn() : SignUp(),
-            const SizedBox(
-              height: 40,
-            ),
-          ])),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: texts
+                      .map((e) => GestureDetector(
+                            onTap: active == texts.indexOf(e)
+                                ? null
+                                : () => setActive(active == 0 ? 1 : 0),
+                            child: Container(
+                              margin: EdgeInsets.symmetric(horizontal: 20),
+                              decoration: BoxDecoration(
+                                border: active == texts.indexOf(e)
+                                    ? const Border(
+                                        bottom: BorderSide(
+                                        width: 3,
+                                      ))
+                                    : null,
+                              ),
+                              child: Text(e),
+                            ),
+                          ))
+                      .toList(),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              active == 0 ? SignIn() : SignUp(),
+              const SizedBox(
+                height: 40,
+              ),
+            ])),
+      ),
     );
   }
 }

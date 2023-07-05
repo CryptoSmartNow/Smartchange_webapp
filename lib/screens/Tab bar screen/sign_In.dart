@@ -18,7 +18,7 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
-        children: [
+        children: <Widget>[
           InputField(
             text: 'Email address',
             textSize: 15,
