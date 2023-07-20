@@ -5,8 +5,9 @@ import 'package:smart_change/utilis/app_colors.dart';
 
 class PasswordTextField extends StatefulWidget {
   final String text;
-  const PasswordTextField({super.key, required this.controller, required this.text});
-  final TextEditingController controller;
+  const PasswordTextField(
+      {super.key, required this.text});
+  
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -15,15 +16,16 @@ class PasswordTextField extends StatefulWidget {
 class _PasswordTextFieldState extends State<PasswordTextField> {
   @override
   Widget build(BuildContext context) {
-    var obscureText = true;
-    return Container(
-      height: 45,
-      width: 280,
-      child: TextField(
-        controller: widget.controller,
-        obscureText: obscureText,
+    
+    return SizedBox(
+       height: 45,
+      width: 270,
+      child: TextFormField(
         decoration: InputDecoration(
-            border: InputBorder.none,
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: const BorderSide(
+                    width: 2, color: AppColors.FooterImageBorderColor)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: const BorderSide(
@@ -36,17 +38,13 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
-                    obscureText = !obscureText;
+                  
                   });
                 },
-                child: obscureText
-                    ? const Icon(
-                        Icons.visibility_off_outlined,
-                        color: AppColors.IconColor,
-                      )
-                    : const Icon(
+                child:const Icon(
                         Icons.visibility_outlined,
                         color: AppColors.IconColor,
+                        
                       ))),
       ),
     );

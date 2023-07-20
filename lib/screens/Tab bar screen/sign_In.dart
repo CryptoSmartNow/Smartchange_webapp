@@ -1,11 +1,13 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:smart_change/screens/Tab%20bar%20screen/forgot_password.dart';
 import 'package:smart_change/utilis/app_colors.dart';
-import 'package:smart_change/widgets/header_image.dart';
-import 'package:smart_change/widgets/input_field.dart';
+import '../../components/input_field.dart';
+import '../../components/login_footer.dart';
+import '../../components/password_form.dart';
 
-import '../../widgets/login_footer.dart';
+
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -15,8 +17,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+   int counter = 0;
 
-   @override
+  @override
   void initState() {
     super.initState();
   }
@@ -26,38 +29,57 @@ class _SignInState extends State<SignIn> {
     super.dispose();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
+    return SizedBox(
+      height: 600,
       child: Column(
         children: <Widget>[
-          InputField(
+          const InputField(
             text: 'Email address',
             textSize: 15,
-            icon: Icons.mail,
             Iconcolor: AppColors.IconColor,
+            imageUrl: 'assets/images/at.png',
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          InputField(
-              text: 'Password',
-              textSize: 15,
-              icon: Icons.mail_lock_outlined,
-              Iconcolor:AppColors.IconColor),
-          SizedBox(
+          const PasswordTextField(
+            
+            text: 'Password',
+          ),
+          const SizedBox(
             height: 10,
           ),
-          Text(
-            'Forget Password?',
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const ForgotPassword()));
+              setState(() {
+       
+             
+                }                
+              );
+            },
+            child: const Text(
+              'Forget Password?',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
+            ),
           ),
-          SizedBox(
-            height: 20,
+          const SizedBox(
+            height: 15,
           ),
-          LoginFooter()
+          const LoginFooter()
         ],
       ),
     );
   }
+
+
 }

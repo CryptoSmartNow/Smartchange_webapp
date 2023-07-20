@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_change/utilis/app_colors.dart';
 
+
 class LoginFooter extends StatefulWidget {
   const LoginFooter({super.key});
 
@@ -26,14 +27,18 @@ class _LoginFooterState extends State<LoginFooter> {
                   blurRadius: 5,
                 )
               ]),
-          child: const Center(
-            child: Text(
-              'Continue',
-              style: TextStyle(
-                fontSize: 15,
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
+          child: Center(
+            child: GestureDetector(
+              onTap: () {
+                
+              },
+              child: const Text(
+                'Continue',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 15,
+                    fontFamily: 'Roboto'),
               ),
             ),
           ),
@@ -88,4 +93,5 @@ class _LoginFooterState extends State<LoginFooter> {
       ],
     );
   }
+  
 }
