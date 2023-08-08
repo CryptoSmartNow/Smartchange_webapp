@@ -1,13 +1,13 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
+import 'package:smart_change/components/nav_bar.dart';
 import 'package:smart_change/intro%20screens/intro_screen_1.dart';
 import 'package:smart_change/intro%20screens/intro_screen_2.dart';
 import 'package:smart_change/intro%20screens/intro_screen_3.dart';
 import 'package:smart_change/intro%20screens/intro_screen_4.dart';
 import 'package:smart_change/intro%20screens/intro_screen_5.dart';
 import 'package:smart_change/utilis/app_colors.dart';
-import 'package:smart_change/welcome_home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -88,7 +88,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) =>
-                                      const WelcomeHomePage()));
+                                      const SmartChangeAppBottom()));
                             },
                             child: Container(
                               height: 35,

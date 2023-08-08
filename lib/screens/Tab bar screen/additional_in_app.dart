@@ -3,22 +3,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_notifier.dart';
+import 'package:smart_change/Pages/settings.dart';
+import 'package:smart_change/components/nav_bar.dart';
 import 'package:smart_change/on_boarding_screen.dart';
 import 'package:smart_change/utilis/app_colors.dart';
-import '../../components/mini_input_field.dart';
-import '../../components/normal_button.dart';
-import '../../components/orange_button.dart';
+import '../../../../components/mini_input_field.dart';
+import '../../../../components/normal_button.dart';
+import '../../../../components/orange_button.dart';
 
-class AdditionalSecure extends StatefulWidget {
-  const AdditionalSecure({
+class AdditionalInApp extends StatefulWidget {
+  const AdditionalInApp({
     super.key,
   });
 
   @override
-  State<AdditionalSecure> createState() => _AdditionalSecureState();
+  State<AdditionalInApp> createState() => _AdditionalInAppState();
 }
 
-class _AdditionalSecureState extends State<AdditionalSecure> {
+class _AdditionalInAppState extends State<AdditionalInApp> {
   bool val1 = false;
   onChangeFunction1(bool noValue1) {
     val1 = noValue1;
@@ -201,14 +203,16 @@ class _AdditionalSecureState extends State<AdditionalSecure> {
                   OrangeButton(
                     text: 'Continue',
                     onPress: () {
-                      openDialog();
+                      Navigator.of(context).pop();
                     },
                   ),
                   const SizedBox(
                     height: 70,
                   ),
                   GestureDetector(
-                    onTap: openDialog1,
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
                     child: Padding(
                       padding: const EdgeInsets.only(left: 330),
                       child: Container(
